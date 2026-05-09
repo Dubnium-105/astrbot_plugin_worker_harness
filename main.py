@@ -122,9 +122,12 @@ class WorkerHarnessPlugin(Star):
         route = route_task(task)
 
         # --- try execution path when host_mcp is allowed ---
+        # sandbox + host_mcp tasks both go through MCP when enabled, since
+        # "列出 tests 目录" often classifies as sandbox without explicit host keywords.
+        mcp_categories = {TaskCategory.HOST_MCP, TaskCategory.SANDBOX}
         executed = False
         if (
-            route.category == TaskCategory.HOST_MCP
+            route.category in mcp_categories
             and self.policy.allow_host_mcp
             and self.config.get("host_mcp_url")
         ):

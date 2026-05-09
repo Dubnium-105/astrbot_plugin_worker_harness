@@ -55,6 +55,18 @@ HOST_MCP_KEYWORDS = (
     "mcp server",
     "宿主机",
     "主机",
+    "列出",
+    "查看",
+    "读文件",
+    "写文件",
+    "文件列表",
+    "目录",
+    "list file",
+    "read file",
+    "write file",
+    "cat ",
+    "ls ",
+    "dir ",
 )
 
 ASTRBOT_PLUGIN_KEYWORDS = (
