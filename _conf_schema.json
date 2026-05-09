@@ -1,0 +1,40 @@
+{
+  "max_steps": {
+    "description": "Maximum Worker Agent planning steps.",
+    "type": "int",
+    "default": 8
+  },
+  "tool_call_timeout": {
+    "description": "Tool call timeout in seconds.",
+    "type": "int",
+    "default": 30
+  },
+  "allow_host_mcp": {
+    "description": "Allow Host MCP access. Disabled by default.",
+    "type": "bool",
+    "default": false
+  },
+  "allow_shell": {
+    "description": "Allow shell access. Disabled by default.",
+    "type": "bool",
+    "default": false
+  },
+  "allowed_write_roots": {
+    "description": "Paths where Worker tools may write.",
+    "type": "list",
+    "default": []
+  },
+  "protected_roots": {
+    "description": "Paths that Worker tools must not write.",
+    "type": "list",
+    "default": [
+      "astrbot",
+      "AstrBot",
+      "astrbot/core",
+      "astrbot/api",
+      "astrbot/platform",
+      "config",
+      "data/config"
+    ]
+  }
+}

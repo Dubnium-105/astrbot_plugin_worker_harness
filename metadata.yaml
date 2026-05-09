@@ -1,0 +1,5 @@
+name: astrbot_plugin_worker_harness
+desc: Safe Worker Harness for A.S.T.R.A.
+version: 0.1.0
+author: worker-harness
+repo: ""
