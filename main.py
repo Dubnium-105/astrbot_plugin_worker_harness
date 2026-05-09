@@ -46,8 +46,10 @@ class WorkerHarnessPlugin(Star):
         self.audit_log = AuditLog()
 
     @filter.command("worker")
-    async def worker(self, event: AstrMessageEvent, *args) -> None:
-        task = " ".join(str(arg) for arg in args).strip() or "health check"
+    async def worker(self, event: AstrMessageEvent) -> None:
+        # Extract task from message: /worker <task>
+        raw = getattr(event, "message_str", "") or ""
+        task = raw.removeprefix("/worker").strip() or "health check"
         route = route_task(task)
         worker_prompt = build_worker_prompt(
             user_request=task,
