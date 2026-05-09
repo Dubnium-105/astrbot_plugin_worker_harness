@@ -9,6 +9,11 @@
     "type": "int",
     "default": 30
   },
+  "host_mcp_url": {
+    "description": "SSE URL of the host MCP server.",
+    "type": "string",
+    "default": "http://172.18.0.1:8001"
+  },
   "allow_host_mcp": {
     "description": "Allow Host MCP access. Disabled by default.",
     "type": "bool",
